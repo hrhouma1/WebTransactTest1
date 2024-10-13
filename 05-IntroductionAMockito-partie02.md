@@ -1,4 +1,6 @@
+----------------------------
 # Introduction
+----------------------------
 
 - Je vous présente une liste exhaustive des possibilités de tests unitaires que vous pouvez réaliser dans un projet Spring Boot, en particulier avec des contrôleurs, services et l'utilisation de **Mockito** pour simuler les dépendances. 
 - Cela couvre plusieurs types de tests pour s'assurer que votre projet est correctement testé.
@@ -18,7 +20,10 @@ Chaque catégorie peut inclure :
 - Tests de validation des entrées
 - Tests de comportement des dépendances (via Mockito)
 
+----------------------------
 # 1. **Tests de contrôleur avec Mockito**
+----------------------------
+
 
 Les tests de contrôleur permettent de valider le comportement des endpoints de votre application.
 
@@ -42,7 +47,11 @@ Les tests de contrôleur permettent de valider le comportement des endpoints de 
 | Tester un POST avec des champs manquants        | `mvn -Dtest=GradebookControllerTest#createStudentMissingFields test`             | Simule une requête POST où certains champs sont manquants (comme l'email).                            |
 | Tester un POST avec des données non valides     | `mvn -Dtest=GradebookControllerTest#createStudentInvalidEmail test`              | Simule une requête POST avec un email non valide et vérifie la validation.                             |
 
+
+----------------------------
 # 2. **Tests de services avec Mockito**
+----------------------------
+
 
 Les tests de service se concentrent sur la logique métier, en s'assurant que le service fonctionne comme prévu. **Mockito** est utilisé pour simuler les DAO et les autres dépendances.
 
@@ -59,7 +68,10 @@ Les tests de service se concentrent sur la logique métier, en s'assurant que le
 | Tester l'exception lors de la création d'un étudiant | `mvn -Dtest=StudentAndGradeServiceTest#createStudentThrowsException test`        | Simule un comportement où la création d'un étudiant échoue et lance une exception.                     |
 | Tester la gestion des exceptions (supprimer une note inexistante) | `mvn -Dtest=StudentAndGradeServiceTest#deleteNonExistingGrade test`            | Vérifie le comportement du service lors de la tentative de suppression d’une note inexistante.         |
 
+----------------------------
 # 3. **Tests de repository avec Mockito**
+----------------------------
+
 
 Les tests de repository vérifient le comportement des DAO (Data Access Objects). Vous pouvez utiliser Mockito pour simuler le comportement des couches supérieures.
 
@@ -69,7 +81,10 @@ Les tests de repository vérifient le comportement des DAO (Data Access Objects)
 | Simuler la recherche d'un étudiant par email      | `mvn -Dtest=StudentDaoTest#findByEmailMock test`                                 | Simule la recherche d’un étudiant par son email via le DAO.                                            |
 | Simuler la suppression d'un étudiant              | `mvn -Dtest=StudentDaoTest#deleteStudentMock test`                               | Simule la suppression d’un étudiant via le DAO.                                                        |
 
+----------------------------
 # 4. **Tests de validation**
+----------------------------
+
 
 Les tests de validation s'assurent que les données fournies par l'utilisateur respectent les règles de validation définies (comme les annotations `@NotNull`, `@Size`, etc.).
 
@@ -79,7 +94,11 @@ Les tests de validation s'assurent que les données fournies par l'utilisateur r
 | Tester la validation de champs vides              | `mvn -Dtest=ValidationTest#emptyFields test`                                     | Simule une requête avec des champs vides et vérifie le message d’erreur de validation.                 |
 | Tester la validation d’un nom trop court          | `mvn -Dtest=ValidationTest#invalidNameLength test`                               | Simule la création d’un étudiant avec un nom trop court et vérifie que la validation échoue.           |
 
+
+----------------------------
 # 5. **Tests d'intégration**
+----------------------------
+
 
 Les tests d'intégration valident que tous les composants fonctionnent ensemble, en utilisant une véritable base de données (comme H2 en mémoire pour les tests).
 
@@ -89,7 +108,11 @@ Les tests d'intégration valident que tous les composants fonctionnent ensemble,
 | Test d'intégration pour la création d'une note    | `mvn -Dtest=IntegrationTest#createGradeIntegration test`                         | Teste l’intégration de la création d’une note dans la base de données.                                |
 | Test d'intégration pour la suppression d'un étudiant | `mvn -Dtest=IntegrationTest#deleteStudentIntegration test`                       | Teste la suppression d'un étudiant dans la base de données réelle (H2 en mémoire).                     |
 
+----------------------------
 # 6. **Tests d’erreurs avec Mockito (exemples)**
+----------------------------
+
+
 - **Simuler une exception pour tester la gestion des erreurs dans le contrôleur :**
    ```java
    Mockito.when(service.deleteStudent(1)).thenThrow(new RuntimeException("Erreur suppression"));
@@ -98,8 +121,10 @@ Les tests d'intégration valident que tous les composants fonctionnent ensemble,
    ```bash
    mvn -Dtest=GradebookControllerTest#deleteStudentErrorMock test
    ```
-
+----------------------------
 # Conclusion
+----------------------------
+
 
 - Cette table regroupe les tests possibles avec **Mockito**, les tests d’intégration, les tests de validation et les tests d’erreurs. 
 - Utilisez ces commandes pour exécuter les tests correspondants dans votre projet Spring Boot en fonction de ce que vous souhaitez valider. 
