@@ -1,6 +1,8 @@
-### Table complète des tests à exécuter 
-
+--------------------------------
 # Tests dans les classes GradebookControllerTest et StudentAndGradeServiceTest
+--------------------------------
+
+### Table complète des tests à exécuter 
 
 ```plaintext
 +--------------------------------------+-------------------------------------------------+
