@@ -1,6 +1,9 @@
 
+# Résumé
 
-Voici une table ASCII contenant plusieurs tests que vous pouvez exécuter dans votre projet Maven. Cette table couvre différents cas de test dans les classes `GradebookControllerTest` et `StudentAndGradeServiceTest`, ainsi que des combinaisons de tests. Chaque ligne vous donne une commande Maven spécifique à exécuter.
+- Je vous présente un résumé d'exemples de tests que vous pouvez exécuter dans notre projet Maven. 
+- Cette table couvre différents cas de test dans les classes `GradebookControllerTest` et `StudentAndGradeServiceTest`, ainsi que des combinaisons de tests.
+- Chaque ligne vous donne une commande Maven spécifique à exécuter.
 
 ```plaintext
 +--------------------------------------+--------------------------------------------+
