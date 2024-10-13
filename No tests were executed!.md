@@ -1,6 +1,7 @@
-L'erreur que vous rencontrez ("No tests were executed!") indique que Maven ne trouve pas les tests que vous spécifiez. Voici quelques étapes pour résoudre ce problème et réussir à exécuter un test spécifique avec Maven.
+- Si vous rencontrez l'erreur suivante ("No tests were executed!"), ceci indique que Maven ne trouve pas les tests que vous spécifiez. 
+- Voici quelques étapes pour résoudre ce problème et réussir à exécuter un test spécifique avec Maven.
 
-### Étapes pour résoudre le problème :
+# Étapes pour résoudre le problème :
 
 1. **Vérifiez la classe de test** :
    Assurez-vous que la classe `CollegeStudentTest` existe et que le nom de la méthode de test est bien `testFullName`.
@@ -39,7 +40,7 @@ L'erreur que vous rencontrez ("No tests were executed!") indique que Maven ne tr
    mvn -Dtest=CollegeStudentTest#testFullName test
    ```
 
-### Commande correcte pour exécuter un test spécifique
+# Commande correcte pour exécuter un test spécifique
 
 Pour exécuter le test `testFullName` dans `CollegeStudentTest`, la commande devrait ressembler à ceci :
 
@@ -52,7 +53,7 @@ Si vous avez encore des difficultés, voici quelques points supplémentaires à 
 - Assurez-vous que le fichier `CollegeStudentTest.java` se trouve dans le répertoire correct `src/test/java/com/luv2code/springmvc/`.
 - Vérifiez que la méthode `testFullName` est bien annotée avec `@Test` et que les autres dépendances (JUnit) sont correctement configurées dans le fichier `pom.xml`.
 
-### Exemple d'exécution d'un test échoué
+# Exemple d'exécution d'un test échoué
 
 Si vous voulez provoquer une erreur intentionnellement, modifiez le test `testFullName` pour qu'il s'attende à une valeur incorrecte, par exemple :
 
