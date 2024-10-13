@@ -225,3 +225,107 @@ Cela générera la documentation dans le répertoire `target/site/apidocs`.
 
 ---
 
+
+
+
+------
+------
+------
+# Annexe 1:
+---
+
+Voici un guide détaillé pour déployer votre fichier **WAR** sur Apache **Tomcat** sous Windows.
+
+# 1. **Télécharger et installer Tomcat (si ce n'est pas déjà fait)**
+Si Apache Tomcat n'est pas encore installé, vous pouvez le télécharger depuis [le site officiel de Tomcat](https://tomcat.apache.org/download-90.cgi). Assurez-vous de télécharger la version adaptée à votre machine (32 bits/64 bits).
+
+- Une fois téléchargé, décompressez le fichier ZIP à un emplacement de votre choix, par exemple :
+  ```bash
+  C:\Program Files\Apache Tomcat 9.0
+  ```
+
+# 2. **Démarrer Apache Tomcat**
+Avant de déployer votre fichier WAR, vous devez démarrer Tomcat.
+
+- Accédez au répertoire `bin` de l'installation de Tomcat (par exemple : `C:\Program Files\Apache Tomcat 9.0\bin`).
+- Double-cliquez sur **startup.bat** ou exécutez-le dans l'invite de commande :
+  ```bash
+  C:\Program Files\Apache Tomcat 9.0\bin\startup.bat
+  ```
+
+Vous devriez voir une fenêtre de commande apparaître, confirmant que Tomcat a démarré.
+
+# 3. **Accéder à l'interface de gestion de Tomcat**
+- Ouvrez un navigateur et accédez à l'interface de gestion de Tomcat à cette adresse :
+  ```
+  http://localhost:8080
+  ```
+
+Si Tomcat fonctionne correctement, vous devriez voir la page d'accueil de Tomcat.
+
+# 4. **Déployer le fichier WAR**
+
+Il existe deux manières principales de déployer un fichier WAR : via l'interface de gestion Tomcat ou manuellement.
+
+#### Méthode 1 : Déploiement via l'interface de gestion Tomcat
+
+1. Allez à l'adresse suivante pour accéder au **Manager App** de Tomcat :
+   ```
+   http://localhost:8080/manager
+   ```
+2. Connectez-vous avec les identifiants que vous avez définis dans le fichier `tomcat-users.xml` (normalement situé dans `C:\Program Files\Apache Tomcat 9.0\conf\tomcat-users.xml`). Si ce fichier n'a pas encore été configuré, ouvrez-le avec un éditeur de texte et ajoutez une configuration d'utilisateur admin comme suit :
+
+   ```xml
+   <role rolename="manager-gui"/>
+   <user username="admin" password="admin" roles="manager-gui"/>
+   ```
+
+   Redémarrez Tomcat si vous avez fait ces modifications.
+
+3. Une fois connecté à l'interface du **Manager**, faites défiler jusqu’à la section **Deploy**.
+4. Dans **WAR file to deploy**, cliquez sur **Choose File**, sélectionnez votre fichier `spring-boot-mvc-testing-demo-1.0.0.war`, puis cliquez sur **Deploy**.
+
+Une fois le déploiement terminé, vous devriez voir un lien vers votre application dans la liste des applications déployées.
+
+#### Méthode 2 : Déploiement manuel dans le dossier `webapps`
+
+1. Copiez votre fichier **WAR** (`spring-boot-mvc-testing-demo-1.0.0.war`) dans le répertoire suivant :
+   ```
+   C:\Program Files\Apache Tomcat 9.0\webapps
+   ```
+2. Tomcat va automatiquement déployer l'application en extrayant son contenu dans un sous-dossier nommé `spring-boot-mvc-testing-demo-1.0.0`.
+
+3. Vous pouvez vérifier si l'application est déployée en visitant l'URL suivante dans votre navigateur :
+   ```
+   http://localhost:8080/spring-boot-mvc-testing-demo-1.0.0/
+   ```
+
+# 5. **Vérifier les logs**
+
+Si le déploiement échoue ou si vous rencontrez des erreurs, vous pouvez consulter les logs pour en savoir plus. Sous Windows, les logs se trouvent généralement ici :
+```
+C:\Program Files\Apache Tomcat 9.0\logs\catalina.out
+```
+
+# 6. **Gérer les services Tomcat (facultatif)**
+
+Vous pouvez également installer Tomcat en tant que service Windows afin qu'il démarre automatiquement au démarrage du système.
+
+- Ouvrez l'invite de commande en tant qu'administrateur.
+- Exécutez la commande suivante pour installer Tomcat comme service :
+  ```bash
+  C:\Program Files\Apache Tomcat 9.0\bin\service.bat install
+  ```
+
+Vous pouvez ensuite gérer Tomcat via les services Windows ou via le fichier `tomcat9w.exe` dans le dossier `bin`.
+
+---
+
+# Recapitulatif des étapes :
+
+1. **Démarrez Tomcat** en exécutant `startup.bat`.
+2. **Accédez au Manager** via `http://localhost:8080/manager`.
+3. **Déployez le fichier WAR** via l'interface de gestion ou en copiant le fichier dans `webapps`.
+4. **Testez l'application** en accédant à `http://localhost:8080/spring-boot-mvc-testing-demo-1.0.0/`.
+
+Si vous suivez ces étapes, vous devriez pouvoir déployer et exécuter votre fichier WAR sur Tomcat sous Windows.
