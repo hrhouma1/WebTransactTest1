@@ -1,9 +1,10 @@
 
 # Introduction:
 
-Dans le projet que vous travaillez, il existe plusieurs types de tests et de frameworks de tests utilisés pour vérifier différents aspects de l'application. Voici une vue d'ensemble des types de tests et des technologies impliquées :
+- Dans le projet que nous utilisons, il existe plusieurs types de tests et de frameworks de tests utilisés pour vérifier différents aspects de l'application. 
+- Je vous présente une vue d'ensemble des types de tests et des technologies impliquées :
 
-### 1. **JUnit (Tests unitaires de base)**
+# 1. **JUnit (Tests unitaires de base)**
    - **Type de test** : Tests unitaires.
    - **Framework** : JUnit (version 5 ici, aussi appelée **JUnit Jupiter**).
    - **But** : Vérifier que chaque unité individuelle de votre code (une méthode, un composant isolé) fonctionne comme prévu.
@@ -20,7 +21,7 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Chaque test est isolé et ne dépend pas d'un autre.
      - Tests de logique métier simple sans interaction avec des dépendances externes.
 
-### 2. **Mockito (Tests avec simulation des dépendances)**
+# 2. **Mockito (Tests avec simulation des dépendances)**
    - **Type de test** : Tests unitaires avec mocks.
    - **Framework** : Mockito.
    - **But** : Simuler des dépendances externes (comme des bases de données, des services ou des objets complexes) afin de tester des composants indépendamment des autres parties de l'application.
@@ -42,7 +43,7 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Vous permet d'éviter les interactions avec de vrais composants (comme des bases de données ou des services tiers).
      - Tests de logique métier avec interaction simulée.
 
-### 3. **Tests d'intégration (Integration Tests)**
+# 3. **Tests d'intégration (Integration Tests)**
    - **Type de test** : Tests d'intégration.
    - **Framework** : JUnit + Spring Boot Test.
    - **But** : Tester l'intégration des différents composants de l'application, en particulier les interactions avec des bases de données, des services externes ou d'autres systèmes.
@@ -69,7 +70,7 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Teste le bon fonctionnement de toute la chaîne (contrôleurs, services, bases de données).
      - Exécutions plus longues que les tests unitaires simples.
 
-### 4. **Spring Boot Test (Tests de contrôleur et tests d'intégration)**
+# 4. **Spring Boot Test (Tests de contrôleur et tests d'intégration)**
    - **Type de test** : Tests d'intégration + tests de contrôleur.
    - **Framework** : Spring Boot Test + MockMvc.
    - **But** : Vérifier le comportement des endpoints REST ou MVC, en simulant des requêtes HTTP sur les contrôleurs. Utilise souvent **MockMvc** pour tester les contrôleurs sans lancer un vrai serveur web.
@@ -96,7 +97,7 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Utilise **MockMvc** pour simuler des requêtes HTTP (GET, POST, etc.).
      - Interagit avec les services réels ou simulés pour vérifier le bon fonctionnement global de l'application.
   
-### 5. **Tests de validation (Validation Tests)**
+# 5. **Tests de validation (Validation Tests)**
    - **Type de test** : Tests de validation.
    - **Framework** : JUnit + Annotations de validation Spring.
    - **But** : Tester que les données d'entrée respectent bien les règles de validation définies avec des annotations comme `@NotNull`, `@Size`, `@Email`, etc.
@@ -114,7 +115,7 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Basé sur les annotations de validation des entités dans Spring (`@NotNull`, `@Size`, etc.).
      - Peut être testé indépendamment des contrôleurs ou des services.
 
-### 6. **Tests d'exception (Exception Testing)**
+# 6. **Tests d'exception (Exception Testing)**
    - **Type de test** : Tests d'exception.
    - **Framework** : JUnit + Mockito.
    - **But** : Vérifier que certaines méthodes lancent bien des exceptions prévues dans des conditions spécifiques.
@@ -133,7 +134,7 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Simule des conditions d'erreur pour s'assurer que le code lance correctement les exceptions prévues.
      - Peut être utilisé avec **Mockito** pour simuler des erreurs dans les dépendances.
 
-### 7. **Tests d'API (Controller/REST API Tests avec MockMvc)**
+# 7. **Tests d'API (Controller/REST API Tests avec MockMvc)**
    - **Type de test** : Tests d'API.
    - **Framework** : MockMvc.
    - **But** : Tester les endpoints REST de l'application en simulant des requêtes HTTP GET, POST, PUT, DELETE.
@@ -154,8 +155,8 @@ Dans le projet que vous travaillez, il existe plusieurs types de tests et de fra
      - Utilise **MockMvc** pour simuler les appels HTTP.
 
 ---
-
-### Récapitulatif des technologies utilisées dans le projet
+# Récapitulatif des technologies utilisées dans le projet
+---
 
 1. **JUnit (Tests unitaires)** :
    - Tests simples, indépendants, centrés sur la logique métier.
