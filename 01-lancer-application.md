@@ -1,7 +1,7 @@
 # Guide pour tester les différentes pages et actions de l'application Spring Boot :
 
 ```
-git clone 
+git clone https://github.com/hrhouma1/WebTransactTest2.git
 ```
 
 # 1. **Accéder à la page d'accueil (index.html)**
