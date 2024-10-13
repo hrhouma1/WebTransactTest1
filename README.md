@@ -201,6 +201,8 @@ Après avoir généré le fichier JAR exécutable avec Maven, vous pouvez le lan
 
 ```bash
 java -jar target/nom-du-fichier.jar
+java -jar target/spring-boot-mvc-testing-demo-1.0.0.war
+java -jar target/spring-boot-mvc-testing-demo-1.0.0.war.original
 ```
 
 # 14. **Déployer l'application sur Tomcat ou autre serveur** (WAR)
