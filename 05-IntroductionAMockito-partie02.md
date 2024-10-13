@@ -5,7 +5,10 @@
 - Je vous présente une liste exhaustive des possibilités de tests unitaires que vous pouvez réaliser dans un projet Spring Boot, en particulier avec des contrôleurs, services et l'utilisation de **Mockito** pour simuler les dépendances. 
 - Cela couvre plusieurs types de tests pour s'assurer que votre projet est correctement testé.
 
+----------------------------
 # Structure générale des tests
+----------------------------
+
 
 Les tests peuvent être classés en différentes catégories :
 1. **Tests de contrôleur (Controller Tests)**
