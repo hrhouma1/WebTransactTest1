@@ -1,3 +1,5 @@
+# Introduction à la partie 3
+
 - Je vous présente une liste complète des tests supplémentaires basés sur **Mockito**, utilisés dans les tests unitaires pour isoler et simuler les comportements dans notre projet Spring Boot. 
 - Ces tests impliquent l'utilisation de `Mockito` pour simuler des dépendances et s'assurer que les méthodes des services ou des contrôleurs fonctionnent correctement sans toucher la base de données ou d'autres systèmes externes.
 
