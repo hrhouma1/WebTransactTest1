@@ -1,9 +1,13 @@
+-----------------------------------------
 # Introduction à la partie 3
+-----------------------------------------
 
 - Je vous présente une liste complète des tests supplémentaires basés sur **Mockito**, utilisés dans les tests unitaires pour isoler et simuler les comportements dans notre projet Spring Boot. 
 - Ces tests impliquent l'utilisation de `Mockito` pour simuler des dépendances et s'assurer que les méthodes des services ou des contrôleurs fonctionnent correctement sans toucher la base de données ou d'autres systèmes externes.
 
-### Commandes pour les tests basés sur Mockito
+-----------------------------------------
+# Commandes pour les tests basés sur Mockito
+-----------------------------------------
 
 ```plaintext
 +--------------------------------------+-------------------------------------------------------------+
@@ -37,7 +41,11 @@
 +--------------------------------------+-------------------------------------------------------------+
 ```
 
-### Tests supplémentaires basés sur Mockito
+
+-----------------------------------------
+# Tests supplémentaires basés sur Mockito
+-----------------------------------------
+
 
 #### `GradebookControllerTest.java`
 - **`createStudentWithMock`** : Simule la création d’un étudiant via le contrôleur avec Mockito pour isoler le service.
@@ -51,7 +59,10 @@
 - **`getStudentInfoMock`** : Simule la récupération des informations d'un étudiant.
 - **`isStudentValidMock`** : Teste la validation d’un étudiant via un mock du service ou du DAO.
 
-### Exemples d'exécution de commandes :
+-----------------------------------------
+# Exemples d'exécution de commandes :
+-----------------------------------------
+
 
 1. **Pour exécuter le test `createStudentWithMock` dans `GradebookControllerTest` :**
    ```bash
@@ -77,8 +88,11 @@
    ```bash
    mvn -Dtest=GradebookControllerTest test
    ```
+-----------------------------------------
+# Tests d’erreurs et de réussite avec Mockito
+-----------------------------------------
 
-### Tests d’erreurs et de réussite avec Mockito
+
 Pour provoquer un échec dans un test Mockito, vous pouvez simuler des comportements tels que :
 
 - **Lever une exception pour simuler un échec de méthode :**
